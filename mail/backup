@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p /var/backups/gp/mail/var/spool/postfix/
+rsync -a --delete /var/spool/postfix/ /var/backups/gp/mail/var/spool/postfix/

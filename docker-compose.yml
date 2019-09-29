@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  mail:
+    build: mail
+    volumes:                                                                     
+      - mail:/var/spool/postfix
+
+networks:
+    default:
+      external:
+        name: platform_services
+
+volumes:
+  mail:
