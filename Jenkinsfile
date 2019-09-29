@@ -6,7 +6,7 @@
 cfg = jplConfig('gp-mail', 'docker', '', [email:'pedroamador.rodriguez+teecke@gmail.com'])
 
 def publishDockerImage() {
-    nextReleaseNumber = sh (script: "kd get-next-release-number .", returnStdout: true).trim()
+    nextReleaseNumber = sh (script: "kd get-next-release-number .", returnStdout: true).trim().substring(1)
     docker.withRegistry("https://registry.hub.docker.com", 'teeckebot-docker-credentials') {
         def customImage = docker.build("teecke/gp-mail:${nextReleaseNumber}", "./mail")
         customImage.push()
