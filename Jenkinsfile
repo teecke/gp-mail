@@ -5,7 +5,7 @@
 // Initialize global config
 cfg = jplConfig('gp-mail', 'docker', '', [email:'pedroamador.rodriguez+teecke@gmail.com'])
 
-def publishDockerImage(String jenkinsVersion) {
+def publishDockerImage() {
     nextReleaseNumber = sh (script: "kd get-next-release-number .", returnStdout: true).trim()
     docker.withRegistry("https://registry.hub.docker.com", 'teeckebot-docker-credentials') {
         def customImage = docker.build("teecke/gp-mail:${nextReleaseNumber}", "./mail")
