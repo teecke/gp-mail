@@ -12,6 +12,8 @@ The service is formed by one container:
 
 - **mail**: based on [alpine](https://hub.docker.com/_/alpine) docker image with [postfix](https://www.postfix.org) package installed.
 
+Use the `docker-compose.yml.sample` file as the source for your docker-compose configuration file.
+
 ## Operation
 
 You must create a network called "platform_services" before start the services.
