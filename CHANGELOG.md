@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.2.1 (2019-10-09)
+
+### Update
+
+* Use directory instead named volume for mail service in docker-compose sample ([c307262](https://github.com/teecke/gp-mail/commit/c307262))
+
+### Build
+
+* Update Auto Release Log adding v0.2.1 info with JPL ([418f3b9](https://github.com/teecke/gp-mail/commit/418f3b9))
+* Use environment variable for mail notificacions targets ([67a6bd1](https://github.com/teecke/gp-mail/commit/67a6bd1))
+
+### Docs
+
+* Update main readme file ([0021641](https://github.com/teecke/gp-mail/commit/0021641))
+* Generate v0.2.0 changelog with JPL ([b051cbe](https://github.com/teecke/gp-mail/commit/b051cbe))
+
 ## v0.2.0 (2019-09-30)
 
 ### Upgrade
