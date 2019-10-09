@@ -2,9 +2,7 @@
 
 ## Overview
 
-Teecke Generic Platform Mail Service.
-
-Docker-ompose simple configuration to bring up the Mail service to the Generic Platform.
+Docker image and docker-compose sample configuration to bring up a Mail Sender Service to the Teecke [Docker Generic Platform (GP)](https://github.com/teecke/docker-generic-platform).
 
 ## Configuration
 
@@ -12,39 +10,27 @@ The service is formed by one container:
 
 - **mail**: based on [alpine](https://hub.docker.com/_/alpine) docker image with [postfix](https://www.postfix.org) package installed.
 
-Use the `docker-compose.yml.sample` file as the source for your docker-compose configuration file.
-
 ## Operation
 
-You must create a network called "platform_services" before start the services.
+1. Use the `docker-compose.yml.sample` file as your docker-compose configuration file.
 
-```console
-docker network create platform_services
-```
+2. Create a docker network called "platform_services" before start the service with `docker network create platform_services`.
 
-Then you can start the service with `docker-compose up -d` and stop it with `docker-compose stop` commands.
+3. Create a directory called `mail` to store the mails, queue and spool files.
 
-There is one volume created. The ongoing mail data are placed on this volume, so never delete it.
+4. Start with `docker-compose up -d`.
 
-```console
-$ docker volume ls|grep "mail\|VOLUME"
-DRIVER              VOLUME NAME
-local               gp-mail_mail
-```
+5. Use `mail:25` endpoint within your platform as a mail sender.
 
-There are also two tasks `cleanup` and `backup` that you can execute as stand-alone
+6. Manage backups of your files:
 
-```console
-$ docker-compose exec mail cleanup
+   1. Make a backup executing `docker-compose exec mail backup`.
+   2. Find the current backup within the `/var/backups/gp/mail/` of the container.
+   3. Extract the current backup executing `docker cp $(docker-compose ps -q mail):/var/backups/gp gp`.
 
-[...]
+7. Stop the platform with `docker-compose stop`.
 
-$ docker-compose exec mail backup
-```
-
-...or using [Teecke Generic Platform](https://github.com/teecke/generic-platform) project.
-
-The backup data will be stored in the `/var/backups/gp/mail/` directory of the container. You can copy the backup files with a simple "docker cp" command `docker cp $(docker-compose ps -q mail):/var/backups/gp gp`
+You can use this docker piece with the [Docker Generic Platform](https://github.com/teecke/docker-generic-platform) project.
 
 ## Known issues
 
