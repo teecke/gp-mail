@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.3.0 (2020-01-24)
+
+### New
+
+* Add assets install devcontrol action ([9d8031d](https://github.com/teecke/gp-mail/commit/9d8031d))
+* Add .gitignore file ([215ac06](https://github.com/teecke/gp-mail/commit/215ac06))
+
+### Upgrade
+
+* Service refactor with assets install ([9f40584](https://github.com/teecke/gp-mail/commit/9f40584))
+
+### Build
+
+* Update Auto Release Log adding v0.3.0 info with JPL ([df3a11d](https://github.com/teecke/gp-mail/commit/df3a11d))
+
+### Docs
+
+* Generate v0.2.1 changelog with JPL ([c00eede](https://github.com/teecke/gp-mail/commit/c00eede))
+
 ## v0.2.1 (2019-10-09)
 
 ### Update
