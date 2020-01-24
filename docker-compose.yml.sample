@@ -2,11 +2,11 @@ version: '3.7'
 
 services:
   mail:
-    image: teecke/gp-mail:0.2.1
+    image: teecke/gp-mail:0.3.0
     ports:
       - 0025:0025
     volumes:                                                                     
-      - ./mail:/var/spool/postfix
+      - ./data/var/spool/postfix:/var/spool/postfix
 
 networks:
     default:
