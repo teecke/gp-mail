@@ -2,7 +2,8 @@ version: '3.7'
 
 services:
   mail:
-    image: teecke/gp-mail:0.3.0
+    image: teecke/gp-mail:0.4.0
+    build: mail
     ports:
       - 0025:0025
     volumes:                                                                     
