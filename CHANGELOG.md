@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.4.0 (2020-02-25)
+
+### Upgrade
+
+* Use alpine:3.11.3 as base image ([af806bb](https://github.com/teecke/gp-mail/commit/af806bb))
+
+### Update
+
+* Use next image tag in docker-compose file ([64bb9d8](https://github.com/teecke/gp-mail/commit/64bb9d8))
+
+### Build
+
+* Update Auto Release Log adding v0.4.0 info with JPL ([e34f710](https://github.com/teecke/gp-mail/commit/e34f710))
+* Use more generig gp pipeline ([a3a5331](https://github.com/teecke/gp-mail/commit/a3a5331))
+
+### Docs
+
+* Generate v0.3.0 changelog with JPL ([3dfd701](https://github.com/teecke/gp-mail/commit/3dfd701))
+
 ## v0.3.0 (2020-01-24)
 
 ### New
