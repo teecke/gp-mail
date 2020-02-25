@@ -1,17 +1,20 @@
 #!/bin/bash
 
-# @description Run bash linter
+set -eu
+
+# @description Install item assets
 #
 # @example
-#   run-bash-linter
+#   assets-install
 #
 # @arg $1 Task: "brief", "help" or "exec"
 #
-# @exitcode The result of the shellckeck
+# @exitcode The result of the assets installation
 #
 # @stdout "Not implemented" message if the requested task is not implemented
 #
-function run-bash-linter() {
+function assets-install() {
+
 
     # Init
     local briefMessage
@@ -19,7 +22,10 @@ function run-bash-linter() {
 
     briefMessage="Install assets"
     helpMessage=$(cat <<EOF
-Install the mail service assets. It will create the "data/var/spool/postfix" directory with all permissions (777)
+Install the Mail service assets:
+
+* Create the "data/var/spool/postfix" directory with all permissions (777)
+* Create the network "platform_services"
 EOF
 )
 
@@ -61,4 +67,4 @@ EOF
 }
 
 # Main
-run-bash-linter "$@"
+assets-install "$@"

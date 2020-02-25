@@ -16,7 +16,7 @@ The service is formed by one container:
 
 2. Install assets with `devcontrol assets-install`.
 
-3. Start the mail service with `docker-compose up -d`.
+3. Start the service with `docker-compose up -d`.
 
 4. Use `mail:25` endpoint within your platform as a mail sender.
 
@@ -26,7 +26,7 @@ The service is formed by one container:
    2. Find the current backup within the `/var/backups/gp/mail/` of the container.
    3. Extract the current backup executing `docker cp $(docker-compose ps -q mail):/var/backups/gp gp`.
 
-6. Stop the mail service with `docker-compose stop`.
+6. Stop the service with `docker-compose stop`.
 
 You can use this docker piece with the [Docker Generic Platform](https://github.com/teecke/docker-generic-platform) project.
 

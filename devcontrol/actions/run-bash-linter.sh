@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 # @description Run bash linter
 #
 # @example
