@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.4.1 (2020-02-25)
+
+### Update
+
+* Review devcontrol scripts ([f1dc8ec](https://github.com/teecke/gp-mail/commit/f1dc8ec))
+
+### Build
+
+* Update Auto Release Log adding v0.4.1 info with JPL ([022922a](https://github.com/teecke/gp-mail/commit/022922a))
+
+### Docs
+
+* Generate v0.4.0 changelog with JPL ([39677d4](https://github.com/teecke/gp-mail/commit/39677d4))
+
 ## v0.4.0 (2020-02-25)
 
 ### Upgrade
