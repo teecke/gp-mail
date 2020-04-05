@@ -9,7 +9,7 @@ def publishDockerImage(nextReleaseNumber = "") {
     if (nextReleaseNumber == "") {
         nextReleaseNumber = sh (script: "kd get-next-release-number .", returnStdout: true).trim().substring(1)
     }
-    docker.withRegistry("https://registry.hub.docker.com", 'teeckebot-docker-credentials') {
+    docker.withRegistry("", 'teeckebot-docker-credentials') {
         def customImage = docker.build("teecke/${cfg.projectName}:${nextReleaseNumber}", "--pull --no-cache ${cfg.projectName.substring(3)}")
         customImage.push()
         if (nextReleaseNumber != "beta") {
@@ -29,17 +29,13 @@ pipeline {
         }
         stage ('Bash linter') {
             steps {
-                script {
-                    sh 'devcontrol run-bash-linter'
-                }
+                sh 'devcontrol run-bash-linter'
             }
         }
         stage ('Build') {
             agent { label 'docker' }
             steps {
-                script {
-                    publishDockerImage("beta")
-                }
+                publishDockerImage("beta")
             }
         }
         stage ('Make release') {
