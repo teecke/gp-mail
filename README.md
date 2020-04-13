@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Please visit https://github.com/tpbtools/gp-mail
+
 # Generic Platform - Mail Service
 
 ## Overview
